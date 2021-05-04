@@ -17,5 +17,7 @@ namespace api_webmarket.Domain.Models
         
         public int CompanyId { get; set; }
         public Company Company { get; set; }
+
+        public IList<Purchase> Purchases { get; set; } = new List<Purchase>();
     }
 }
