@@ -9,5 +9,6 @@ namespace api_webmarket.Domain.Repositories
     public interface IUserRepository
     {
         Task<IEnumerable<User>> ListAsync();
+        Task AddAsync(User user);
     }
 }

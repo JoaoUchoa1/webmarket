@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "svMQy6+XREP5r3Nk15zp8Fbma80UamWBhKDdlSmMsarM4EJGcrNNqTqsoimKqiiAKHzDIZaOBOliYoT3i8nEKg==",
+  "dgSpecHash": "LN6WrvmcpM5aBVLVJSBp2GYUJ/82EjVf0+RLNb4Ont9TdaLGUJSosIm7XXo+Tipqj/0xyGW9s3bxBtsTzQcdxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jaumw\\Documents\\vs-projects\\webmarket\\api-webmarket\\api-webmarket\\api-webmarket.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jaumw\\.nuget\\packages\\automapper\\6.1.1\\automapper.6.1.1.nupkg.sha512",
     "C:\\Users\\jaumw\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\3.0.1\\automapper.extensions.microsoft.dependencyinjection.3.0.1.nupkg.sha512",
+    "C:\\Users\\jaumw\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\jaumw\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.1.0\\microsoft.aspnetcore.diagnostics.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\jaumw\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.1.0\\microsoft.aspnetcore.hosting.2.1.0.nupkg.sha512",
     "C:\\Users\\jaumw\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.1.0\\microsoft.aspnetcore.hosting.abstractions.2.1.0.nupkg.sha512",

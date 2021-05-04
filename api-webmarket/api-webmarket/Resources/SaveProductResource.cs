@@ -18,11 +18,9 @@ namespace api_webmarket.Resources
         public string Description { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public Epayment Payment { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public float Valor { get; set; }
 
         [Required]

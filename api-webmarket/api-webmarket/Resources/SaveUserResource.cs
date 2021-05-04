@@ -16,7 +16,7 @@ namespace api_webmarket.Resources
         public string Email { get; set; }
         [Required]
         [MaxLength(14)]
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
         [Required]
         [MaxLength(30)]
         public string Password { get; set; }

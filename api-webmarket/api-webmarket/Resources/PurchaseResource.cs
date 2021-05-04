@@ -9,7 +9,7 @@ namespace api_webmarket.Resources
     {
         public int Id { get; set; }
         public string TotalValue { get; set; }
-        public DateTime data = DateTime.Now;
-        
+        public DateTime data { get; set; }
+
     }
 }

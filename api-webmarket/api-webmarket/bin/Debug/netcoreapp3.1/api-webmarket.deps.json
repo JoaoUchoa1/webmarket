@@ -25,6 +25,7 @@
       "api-webmarket/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "3.0.1",
+          "FluentValidation": "10.1.0",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.5",
           "Sentry.AspNetCore": "1.0.0",
@@ -351,6 +352,17 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "FluentValidation/10.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Diagnostics.Abstractions/2.1.0": {},
@@ -2829,6 +2841,13 @@
       "sha512": "sha512-i3IAYqWdE2UbqsmiiXE2L3khtKwkr+J8mT0zvUaiFUg72zC6BgLBo3dFvU5krq7QKBSsKVQ0NTCl/NmDoC0Hng==",
       "path": "automapper.extensions.microsoft.dependencyinjection/3.0.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.3.0.1.nupkg.sha512"
+    },
+    "FluentValidation/10.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RxhhfY9IcEY2qUMYjoUxegInbuE5Bwll7dVLsXpiJf25g0ztmzUK+HHqtPcub1caPemhMJsC+NwjHei+NgAkvA==",
+      "path": "fluentvalidation/10.1.0",
+      "hashPath": "fluentvalidation.10.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Diagnostics.Abstractions/2.1.0": {
       "type": "package",

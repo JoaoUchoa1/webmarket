@@ -1,5 +1,6 @@
 ﻿using api_webmarket.Domain.Models;
 using api_webmarket.Domain.Services;
+using api_webmarket.Extensions;
 using api_webmarket.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,25 @@ namespace api_webmarket.Controllers
             var products = await _productService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductResource>>(products);
             return resources;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveProductResource resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var product = _mapper.Map<SaveProductResource, Product>(resource);
+            var result = await _productService.SaveAsync(product);
+
+            if (!result.Sucess)
+                return BadRequest(result.Message);
+
+            var productResource = _mapper.Map<Product, ProductResource>(result.Product);
+
+            return Ok(productResource);
+
+
         }
     }
 }

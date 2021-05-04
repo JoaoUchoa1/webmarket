@@ -34,14 +34,14 @@ namespace api_webmarket.Persistence
                     Id = 100,
                     NameFantasia = "Lenovo",
                     RazaoSocial = "Lenovo ltda",
-                    Cnpj = 35698741256987
+                    Cnpj = "35698741256987"
                 },
                 new Company
                 {
                     Id = 101,
                     NameFantasia = "Samsung",
                     RazaoSocial = "COREAN TEC",
-                    Cnpj = 98745863215478
+                    Cnpj = "98745863215478"
                 }
             );
 
@@ -108,7 +108,7 @@ namespace api_webmarket.Persistence
                     Id = 100,
                     Nome = "Joao de Deus Uchoa",
                     Email = "joaodep2@gmail.com",
-                    Cpf = 00000000000,
+                    Cpf = "00000000000",
                     Password = "olamundo"
                 }
             );

@@ -45,3 +45,4 @@ C:\Users\jaumw\Documents\vs-projects\webmarket\api-webmarket\api-webmarket\bin\D
 C:\Users\jaumw\Documents\vs-projects\webmarket\api-webmarket\api-webmarket\bin\Debug\netcoreapp3.1\Sentry.Extensions.Logging.dll
 C:\Users\jaumw\Documents\vs-projects\webmarket\api-webmarket\api-webmarket\bin\Debug\netcoreapp3.1\Sentry.PlatformAbstractions.dll
 C:\Users\jaumw\Documents\vs-projects\webmarket\api-webmarket\api-webmarket\bin\Debug\netcoreapp3.1\Sentry.Protocol.dll
+C:\Users\jaumw\Documents\vs-projects\webmarket\api-webmarket\api-webmarket\bin\Debug\netcoreapp3.1\FluentValidation.dll

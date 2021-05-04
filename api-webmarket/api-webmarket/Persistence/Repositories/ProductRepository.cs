@@ -14,9 +14,16 @@ namespace api_webmarket.Persistence.Repositories
         { 
             
         }
+
         public async Task<IEnumerable<Product>> ListAsync()
         {
             return await _context.Products.ToListAsync();
         }
+
+        public async Task AddAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+        }
+
     }
 }

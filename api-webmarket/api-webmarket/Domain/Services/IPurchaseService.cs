@@ -1,4 +1,5 @@
-﻿using api_webmarket.Domain.Models;
+﻿using api_webmarket.Communication;
+using api_webmarket.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace api_webmarket.Domain.Services
     public interface IPurchaseService
     {
         Task<IEnumerable<Purchase>> ListAsync();
+        Task<SavePurchaseResponse> SaveAsync(Purchase purchase);
     }
 }

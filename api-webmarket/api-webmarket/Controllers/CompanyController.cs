@@ -1,5 +1,6 @@
 ﻿using api_webmarket.Domain.Models;
 using api_webmarket.Domain.Services;
+using api_webmarket.Extensions;
 using api_webmarket.Resources;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace api_webmarket.Controllers
 {
@@ -28,6 +30,22 @@ namespace api_webmarket.Controllers
             var companies = await _companyService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);
             return resources;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveCompanyResource resource) 
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var company = _mapper.Map<SaveCompanyResource, Company>(resource);
+            var result = await _companyService.SaveAsync(company);
+
+            if (!result.Sucess)
+                return BadRequest(result.Message);
+
+            var companyResource = _mapper.Map<Company, CompanyResource>(result.Company);
+            return Ok(companyResource);
         }
     }
 }

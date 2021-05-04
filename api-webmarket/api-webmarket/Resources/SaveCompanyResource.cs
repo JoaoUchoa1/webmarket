@@ -15,7 +15,7 @@ namespace api_webmarket.Resources
         [MaxLength(30)]
         public string RazaoSocial { get; set; }
         [Required]
-        [MaxLength(30)]
-        public long Cnpj { get; set; }
+        [MaxLength(16)]
+        public string Cnpj { get; set; }
     }
 }
