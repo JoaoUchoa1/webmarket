@@ -11,5 +11,6 @@ namespace api_webmarket.Domain.Services
     {
         Task<IEnumerable<Product>> ListAsync();
         Task<SaveProductResponse> SaveAsync(Product product);
+        Task<SaveProductResponse> updateAsync(int id, Product product);
     }
 }

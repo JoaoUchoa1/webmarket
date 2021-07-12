@@ -25,5 +25,20 @@ namespace api_webmarket.Persistence.Repositories
         {
             await _context.Companies.AddAsync(company);
         }
+
+        public async Task<Company> FindByIdAsync(int id)
+        {
+            return await _context.Companies.FindAsync(id);
+        }
+
+        public void Update(Company company)
+        {
+            _context.Companies.Update(company);
+        }
+
+        public void Delete(Company company)
+        {
+            _context.Companies.Remove(company);
+        }
     }
 }

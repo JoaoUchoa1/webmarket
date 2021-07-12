@@ -4593,19 +4593,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaumw\\.nuget\\packages\\": {}
+    "C:\\Users\\joao.uchoa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaumw\\Documents\\vs-projects\\webmarket\\api-webmarket\\api-webmarket\\api-webmarket.csproj",
+      "projectUniqueName": "C:\\Users\\joao.uchoa\\Documents\\my-projects\\webmarket\\api-webmarket\\api-webmarket\\api-webmarket.csproj",
       "projectName": "api-webmarket",
-      "projectPath": "C:\\Users\\jaumw\\Documents\\vs-projects\\webmarket\\api-webmarket\\api-webmarket\\api-webmarket.csproj",
-      "packagesPath": "C:\\Users\\jaumw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaumw\\Documents\\vs-projects\\webmarket\\api-webmarket\\api-webmarket\\obj\\",
+      "projectPath": "C:\\Users\\joao.uchoa\\Documents\\my-projects\\webmarket\\api-webmarket\\api-webmarket\\api-webmarket.csproj",
+      "packagesPath": "C:\\Users\\joao.uchoa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joao.uchoa\\Documents\\my-projects\\webmarket\\api-webmarket\\api-webmarket\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jaumw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joao.uchoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4670,7 +4670,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

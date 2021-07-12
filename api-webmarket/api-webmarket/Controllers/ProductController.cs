@@ -48,6 +48,22 @@ namespace api_webmarket.Controllers
 
             return Ok(productResource);
 
+        }
+
+        [HttpPost("{id}")]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveCompanyResource resource) 
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var product = _mapper.Map<SaveProductResource, Product>(resource);
+            var result = await _productService.UpdateAsync(id, product);
+
+            if (!result.Sucess)
+                return BadRequest(result.Message);
+
+            var productResource = _mapper.Map<Company, CompanyResource>(result.Product);
+            return Ok(productResource);
 
         }
     }
