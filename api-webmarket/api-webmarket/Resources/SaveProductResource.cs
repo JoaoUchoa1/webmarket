@@ -10,11 +10,11 @@ namespace api_webmarket.Resources
     public class SaveProductResource
     {
         [Required]
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(100)]
         public string Description { get; set; }
 
         [Required]
@@ -24,7 +24,7 @@ namespace api_webmarket.Resources
         public float Valor { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(100)]
         public string Obs { get; set; }
     }
 }

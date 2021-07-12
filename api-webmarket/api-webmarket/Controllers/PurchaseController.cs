@@ -17,14 +17,14 @@ namespace api_webmarket.Controllers
         private readonly IPurchaseService _purchaseService;
         private readonly IMapper _mapper;
 
-        public PurchaseController(IPurchaseService companyService, IMapper mapper) 
+        public PurchaseController(IPurchaseService companyService, IMapper mapper)
         {
             _purchaseService = companyService;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PurchaseResource>> GetAllAsync() 
+        public async Task<IEnumerable<PurchaseResource>> GetAllAsync()
         {
             var purchases = await _purchaseService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Purchase>, IEnumerable<PurchaseResource>>(purchases);
@@ -45,6 +45,23 @@ namespace api_webmarket.Controllers
 
             var purchaseResource = _mapper.Map<Purchase, PurchaseResource>(result.Purchase);
             return Ok(purchaseResource);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] SavePurchaseResource resource) 
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var purchase = _mapper.Map<SavePurchaseResource, Purchase>(resource);
+            var result = await _purchaseService.UpdateAsync(id, purchase);
+
+            if (!result.Sucess)
+                return BadRequest(result.Message);
+
+            var purchaseResource = _mapper.Map<Purchase, PurchaseResource>(result.Purchase);
+            return Ok(purchaseResource);
+
         }
     }
 }

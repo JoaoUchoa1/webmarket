@@ -39,5 +39,32 @@ namespace api_webmarket.Services
                 return new SaveProductResponse($"An error occurred when saving the Product: { ex.Message}");
             }
         }
+
+        public async Task<SaveProductResponse> updateAsync(int id, Product product)
+        {
+            var existingProduct = await _productRepository.FindByIdAsync(id);
+
+            if (existingProduct == null)
+                return new SaveProductResponse("Product not found");
+
+            existingProduct.Name = product.Name;
+            existingProduct.Obs = product.Obs;
+            existingProduct.Payment = product.Payment;
+            existingProduct.Purchases = product.Purchases;
+            existingProduct.Valor = product.Valor;
+
+            try
+            {
+
+                _productRepository.Update(existingProduct);
+                await _unitOfWork.CompleteAsync();
+
+                return new SaveProductResponse(existingProduct);
+            }
+            catch (Exception ex) 
+            {
+                return new SaveProductResponse($"An error ocurred  when updating the product");
+            }
+        }
     }
 }

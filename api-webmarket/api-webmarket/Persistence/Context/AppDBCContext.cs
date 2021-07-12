@@ -49,7 +49,7 @@ namespace api_webmarket.Persistence
             builder.Entity<Product>().HasKey(p => p.Id);
             builder.Entity<Product>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(50);
-            builder.Entity<Product>().Property(p => p.Description).IsRequired().HasMaxLength(50);
+            builder.Entity<Product>().Property(p => p.Description).IsRequired().HasMaxLength(100);
             builder.Entity<Product>().Property(p => p.Obs).IsRequired().HasMaxLength(50);
             builder.Entity<Product>().Property(p => p.Valor).IsRequired();
             builder.Entity<Product>().Property(p => p.Payment).IsRequired();
