@@ -12,5 +12,6 @@ namespace api_webmarket.Domain.Repositories
         Task AddAsync(Purchase purchase);
         Task<Purchase> FindByIdAsync(int id);
         void Update(Purchase purchase);
+        void Delete(Purchase purchase);
     }
 }

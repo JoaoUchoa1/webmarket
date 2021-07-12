@@ -25,27 +25,27 @@ namespace api_webmarket.Services
             return await _productRepository.ListAsync();
         }
 
-        public async Task<SaveProductResponse> SaveAsync(Product product)
+        public async Task<ProductResponse> SaveAsync(Product product)
         {
             try
             {
                 await _productRepository.AddAsync(product);
                 await _unitOfWork.CompleteAsync();
 
-                return new SaveProductResponse(product);
+                return new ProductResponse(product);
             }
             catch (Exception ex)
             {
-                return new SaveProductResponse($"An error occurred when saving the Product: { ex.Message}");
+                return new ProductResponse($"An error occurred when saving the Product: { ex.Message}");
             }
         }
 
-        public async Task<SaveProductResponse> updateAsync(int id, Product product)
+        public async Task<ProductResponse> UpdateAsync(int id, Product product)
         {
             var existingProduct = await _productRepository.FindByIdAsync(id);
 
             if (existingProduct == null)
-                return new SaveProductResponse("Product not found");
+                return new ProductResponse("Product not found");
 
             existingProduct.Name = product.Name;
             existingProduct.Obs = product.Obs;
@@ -59,11 +59,31 @@ namespace api_webmarket.Services
                 _productRepository.Update(existingProduct);
                 await _unitOfWork.CompleteAsync();
 
-                return new SaveProductResponse(existingProduct);
+                return new ProductResponse(existingProduct);
             }
             catch (Exception ex) 
             {
-                return new SaveProductResponse($"An error ocurred  when updating the product");
+                return new ProductResponse($"An error ocurred  when updating the product. {ex.Message}");
+            }
+        }
+
+        public async Task<ProductResponse> DeleteAsync(int id)
+        {
+            var existingProduct = await _productRepository.FindByIdAsync(id);
+
+            if (existingProduct == null)
+                return new ProductResponse("Product not found");
+
+            try
+            {
+                _productRepository.Remove(existingProduct);
+                await _unitOfWork.CompleteAsync();
+
+                return new ProductResponse(existingProduct);
+            }
+            catch (Exception ex) 
+            {
+                return new ProductResponse($"An error occurred when deleting the product: {ex.Message}");
             }
         }
     }

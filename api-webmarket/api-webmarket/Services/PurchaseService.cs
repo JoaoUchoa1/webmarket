@@ -25,27 +25,27 @@ namespace api_webmarket.Services
             return await _purchaseRepository.ListAsync();
         }
 
-        public async Task<SavePurchaseResponse> SaveAsync(Purchase purchase)
+        public async Task<PurchaseResponse> SaveAsync(Purchase purchase)
         {
             try
             {
                 await _purchaseRepository.AddAsync(purchase);
                 await _unitOfWork.CompleteAsync();
 
-                return new SavePurchaseResponse(purchase);
+                return new PurchaseResponse(purchase);
             }
             catch (Exception ex)
             {
-                return new SavePurchaseResponse($"An error occurred when saving the Purchase: { ex.Message}");
+                return new PurchaseResponse($"An error occurred when saving the Purchase: { ex.Message}");
             }
         }
 
-        public async Task<SavePurchaseResponse> UpdateAsync(int id, Purchase purchase)
+        public async Task<PurchaseResponse> UpdateAsync(int id, Purchase purchase)
         {
             var existingPurchase = await _purchaseRepository.FindByIdAsync(id);
 
             if (existingPurchase == null)
-                return new SavePurchaseResponse("Purchase not found");
+                return new PurchaseResponse("Purchase not found");
 
             existingPurchase.data = purchase.data;
             existingPurchase.TotalValue = purchase.TotalValue;
@@ -55,13 +55,32 @@ namespace api_webmarket.Services
                 _purchaseRepository.Update(existingPurchase);
                 await _unitOfWork.CompleteAsync();
 
-                return new SavePurchaseResponse(existingPurchase);
+                return new PurchaseResponse(existingPurchase);
             }
             catch (Exception ex) 
             {
-                return new SavePurchaseResponse($"An error ocurred when updating the purchages:  { ex.Message }"); 
+                return new PurchaseResponse($"An error ocurred when updating the purchages:  { ex.Message }"); 
             }
 
+        }
+        public async Task<PurchaseResponse> DeleteAsync(int id)
+        {
+            var existingPurchase = await _purchaseRepository.FindByIdAsync(id);
+
+            if (existingPurchase == null)
+                return new PurchaseResponse("Product not found");
+
+            try
+            {
+                _purchaseRepository.Delete(existingPurchase);
+                await _unitOfWork.CompleteAsync();
+
+                return new PurchaseResponse(existingPurchase);
+            }
+            catch (Exception ex)
+            {
+                return new PurchaseResponse($"An error occurred when deleting the product: {ex.Message}");
+            }
         }
     }
 }

@@ -34,5 +34,10 @@ namespace api_webmarket.Persistence.Repositories
         {
             _context.Purchases.Update(purchase);
         }
+
+        public void Delete(Purchase purchase)
+        {
+            _context.Purchases.Remove(purchase);
+        }
     }
 }

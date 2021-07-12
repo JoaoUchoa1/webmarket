@@ -34,5 +34,10 @@ namespace api_webmarket.Persistence.Repositories
         {
             _context.Products.Update(product);
         }
+
+        public void Remove(Product product)
+        {
+            _context.Products.Remove(product);
+        }
     }
 }

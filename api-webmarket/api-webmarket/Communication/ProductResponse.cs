@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace api_webmarket.Communication
 {
-    public class SavePurchaseResponse : BaseResponse
+    public class ProductResponse : BaseResponse
     {
-        public Purchase Purchase { get; private set; }
+        public Product Product { get; private set; }
 
-        private SavePurchaseResponse(bool sucess, string message, Purchase purchase) : base(sucess, message)
+        private ProductResponse(bool sucess, string message, Product product) : base(sucess, message)
         {
-            Purchase = purchase;
+            Product = product;
         }
 
         /// <summary>
         /// Creates a sucess response.
         /// </sumary>
-        /// <param name="purchase">Saved category.</param>
+        /// <param name="product">Saved category.</param>
         /// <returns>Response.</returns>
 
-        public SavePurchaseResponse(Purchase Purchase) : this(true, string.Empty, Purchase)
+        public ProductResponse(Product Product) : this(true, string.Empty, Product)
         { }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace api_webmarket.Communication
         /// <param name ="message">Error message</param>
         /// <returns>Response.</returns>
 
-        public SavePurchaseResponse(string message) : this(false, message, null)
+        public ProductResponse(string message) : this(false, message, null)
         { }
     }
 }

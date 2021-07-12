@@ -10,7 +10,8 @@ namespace api_webmarket.Domain.Services
     public interface IPurchaseService
     {
         Task<IEnumerable<Purchase>> ListAsync();
-        Task<SavePurchaseResponse> SaveAsync(Purchase purchase);
-        Task<SavePurchaseResponse> UpdateAsync(int id, Purchase purchase);
+        Task<PurchaseResponse> SaveAsync(Purchase purchase);
+        Task<PurchaseResponse> UpdateAsync(int id, Purchase purchase);
+        Task<PurchaseResponse> DeleteAsync(int id);
     }
 }
